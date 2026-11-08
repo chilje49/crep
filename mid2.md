@@ -1,8 +1,5 @@
 ```
-switch (choice) {
-    case 1: add_equipment(db); break;
-    case 3: search_equipment(db); break; // 조건 검색 등
-    // ...
-}
+snprintf(sql, sizeof(sql), "INSERT INTO equipment (name, location, status, voltage, check_date) VALUES ('%s', '%s', '%s', %.2f, '%s');", ...);
+sqlite3_exec(db, sql, 0, 0, &err_msg);
 
 ```
